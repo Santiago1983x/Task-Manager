@@ -93,3 +93,329 @@ button {
     color: var(--color-texto-secundario);
     font-size: 14px;
 }
+
+/* ==== 4. FORMULARIO DE TAREAS ===== */
+.task-form {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 26px;
+    margin-bottom: 28px;
+    box-shadow: var(--sombra);
+}
+
+.task-form h2 {
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+/* Contenedores de cada campo */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+/* Campos de entrada */
+.task-form__input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--color-borde);
+    border-radius: 9px;
+    background-color: #ffffff;
+    color: var(--color-texto);
+    outline: none;
+    transition: border-color var(--transicion),
+                box-shadow var(--transicion);
+}
+
+/* Efecto al seleccionar un campo */
+.task-form__input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(40, 100, 232, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 85px;
+}
+
+/* Botones */
+.btn {
+    border: none;
+    border-radius: 9px;
+    padding: 11px 20px;
+    background-color: var(--color-principal);
+    color: #ffffff;
+    font-weight: 600;
+    transition: background-color var(--transicion),
+                transform var(--transicion);
+}
+
+.btn:hover {
+    background-color: var(--color-principal-hover);
+    transform: translateY(-2px);
+}
+
+.btn--secondary {
+    background-color: #e9edf5;
+    color: var(--color-texto);
+}
+
+.btn--secondary:hover {
+    background-color: #dce3ee;
+}
+
+/* Ocultar elementos */
+.hidden {
+    display: none !important;
+}
+
+
+/* ==== 5. CONTROLES DE ADMINISTRACIÓN ==== */
+.controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 22px;
+    margin-bottom: 24px;
+    box-shadow: var(--sombra);
+}
+
+.controls h2 {
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+/* Barra de búsqueda */
+.controls__input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 14px;
+    border: 1px solid var(--color-borde);
+    border-radius: 9px;
+    background-color: #f8fafc;
+    color: var(--color-texto);
+    outline: none;
+    transition: border-color var(--transicion),
+                box-shadow var(--transicion);
+}
+
+.controls__input:focus {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(40, 100, 232, 0.12);
+}
+
+/* Selectores de filtro y ordenamiento */
+.controls select {
+    padding: 12px 14px;
+    border: 1px solid var(--color-borde);
+    border-radius: 9px;
+    background-color: #f8fafc;
+    color: var(--color-texto);
+    cursor: pointer;
+    outline: none;
+    transition: border-color var(--transicion);
+}
+
+.controls select:focus {
+    border-color: var(--color-principal);
+}
+
+/* Efecto hover */
+.controls select:hover,
+.controls__input:hover {
+    border-color: #b5c5df;
+}
+
+/* ==== 6. LISTA DE TAREAS ==== */
+.task-list-section {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 26px;
+    box-shadow: var(--sombra);
+}
+
+.task-list-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de tareas */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    list-style: none;
+}
+
+/* Tarjeta individual */
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px;
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: box-shadow var(--transicion),
+                transform var(--transicion);
+}
+
+.task-item:hover {
+    box-shadow: var(--sombra);
+    transform: translateY(-2px);
+}
+
+/* Información de la tarea */
+.task-item__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-item__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+.task-item__description {
+    font-size: 14px;
+    color: var(--color-texto-secundario);
+    overflow-wrap: anywhere;
+}
+
+/* Indicadores de prioridad */
+.task-item__priority {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.priority--high {
+    color: #b42318;
+    background-color: #fee9e7;
+}
+
+.priority--medium {
+    color: #2457bd;
+    background-color: #e8efff;
+}
+
+.priority--low {
+    color: #647084;
+    background-color: #edf0f5;
+}
+
+/* Tarea completada */
+.task-item--completed {
+    background-color: var(--color-exito-fondo);
+}
+
+.task-item--completed .task-item__title {
+    text-decoration: line-through;
+    color: var(--color-texto-secundario);
+}
+
+/* Botones de acciones */
+.task-item__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.task-item__actions button {
+    border: none;
+    border-radius: 7px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color var(--transicion);
+}
+
+.btn-complete {
+    background-color: var(--color-exito-fondo);
+    color: var(--color-exito);
+}
+
+.btn-complete:hover {
+    background-color: #c9f1da;
+}
+
+.btn-edit {
+    background-color: #e8efff;
+    color: var(--color-principal);
+}
+
+.btn-edit:hover {
+    background-color: #d5e2ff;
+}
+
+.btn-delete {
+    background-color: var(--color-peligro-fondo);
+    color: var(--color-peligro);
+}
+
+.btn-delete:hover {
+    background-color: #fbd0d0;
+}
+
+/* Mensaje cuando no existen tareas */
+.empty-message {
+    padding: 30px 15px;
+    text-align: center;
+    color: var(--color-texto-secundario);
+    font-size: 14px;
+}
+
+
+/* ==== 7. NOTIFICACIONES ==== */
+.notification {
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.notification--success {
+    color: #167044;
+    background-color: #e8f9ef;
+    border-color: #b7ebca;
+}
+
+.notification--error {
+    color: #b42318;
+    background-color: #fee9e7;
+    border-color: #f5c2bd;
+}
+
+.notification--info {
+    color: #2457bd;
+    background-color: #e8efff;
+    border-color: #c5d5ff;
+}
