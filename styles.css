@@ -1,0 +1,95 @@
+
+/* ===== 1. VARIABLES GLOBALES ==== */
+:root {
+    --color-fondo: #f1f5fc;
+    --color-superficie: #ffffff;
+    --color-texto: #172033;
+    --color-texto-secundario: #647084;
+
+    --color-principal: #2864e8;
+    --color-principal-hover: #1d4fc0;
+
+    --color-borde: #e2e8f0;
+
+    --color-exito: #16a36a;
+    --color-exito-fondo: #e8f9ef;
+
+    --color-peligro: #dc4545;
+    --color-peligro-fondo: #fee9e9;
+
+    --color-prioridad-media: #2864e8;
+    --color-prioridad-baja: #647084;
+
+    --sombra: 0 2px 8px rgba(15, 23, 42, 0.05);
+    --radio: 14px;
+    --transicion: 0.2s ease;
+}
+
+/* ==== 2. CONFIGURACIÓN GENERAL ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+button, input, textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    width: min(100% - 40px, 1050px);
+    margin: 40px auto;
+}
+
+.app__titulo {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+/* ==== 3. DASHBOARD Y ESTADÍSTICAS ==== */
+.dashboard {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.metric {
+    flex: 1;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 24px;
+    box-shadow: var(--sombra);
+    transition: transform var(--transicion);
+}
+
+.metric:hover {
+    transform: translateY(-3px);
+}
+
+.metric span {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--color-texto);
+}
+
+.metric small {
+    display: block;
+    margin-top: 5px;
+    color: var(--color-texto-secundario);
+    font-size: 14px;
+}
