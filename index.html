@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TaskManager</title>
+
+        <!-- Hoja de estilos -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <main class="app">
+            <h1 class="app__titulo">Gestor de Tareas (TaskManager)</h1>
+
+            <!-- Notificaciones -->
+            <div id="notification" class="notification hidden" role="alert"></div>
+
+            <!-- Dashboard -->
+            <section class="dashboard" aria-label="Estadísticas de tareas">
+                <div class="metric">
+                    <span id="count-total">0</span>
+                    <small>Total de Tareas</small>
+                </div>
+
+                <div class="metric">
+                    <span id="count-pending">0</span>
+                    <small>Pendientes</small>
+                </div>
+
+                <div class="metric">
+                    <span id="count-completed">0</span>
+                    <small>Completadas</small>
+                </div>
+            </section>
+
+            <!-- Formulario -->
+            <form id="task-form" class="task-form" novalidate>
+                <h2 id="form-title">Crear nueva tarea</h2>
+
+                <!-- Título -->
+                <div class="form-group">
+                    <label for="task-title">Título</label>
+                    <input type="text" id="task-title" class="task-form__input" placeholder="Título de la tarea" required/>
+                </div>
+
+                <!-- Descripción -->
+                <div class="form-group">
+                    <label for="task-description">Descripción</label>
+                    <textarea
+                        id="task-description"
+                        name="taskDescription"
+                        placeholder="Describe brevemente la actividad"
+                        rows="3"></textarea>
+                </div>
+
+                <!-- Prioridad -->
+                <div class="form-group">
+                    <label for="task-priority">Prioridad</label>
+                    <select id="task-priority" name="task-priority">
+                        <option value="alta">Alta</option>
+                        <option value="media" selected>Media</option>
+                        <option value="baja">Baja</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="task-submit" class="btn">Agregar</button>
+                <button type="button" id="task-cancel" class="btn btn--secondary hidden">Cancelar</button>
+            </form>
+
+            <!-- Controles -->
+            <section class="controls">
+                <h2>Administrar tareas</h2>
+
+                <!-- Búsqueda -->
+                <input type="search" id="search" name="search" class="controls__input" placeholder="Buscar por título..." />
+
+                <!-- Filtro -->
+                <select id="filter" name="filter">
+                    <option value="todas">Todas</option>
+                    <option value="pendientes">Pendientes</option>
+                    <option value="completadas">Completadas</option>
+                </select>
+
+                <!-- Ordenamiento -->
+                <select id="sort" name="sort">
+                    <option value="fecha">Ordenar por fecha</option>
+                    <option value="prioridad">Ordenar por prioridad</option>
+                </select>
+            </section>
+
+            <!-- Lista de tareas -->
+            <section class="task-list-section">
+                <h2>Mis tareas</h2>
+                <ul id="task-list" class="task-list"></ul>
+                <p id="empty-message" class="empty-message">Todavía no existen tareas registradas.</p>
+            </section>
+        </main>
+
+        <!-- JavaScript -->
+        <script type="module" src="js/main.js"></script>
+    </body>
+</html>
