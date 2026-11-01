@@ -1,5 +1,6 @@
 // ==========================================================
-// storage.js - Gestor de localStorage // Guardar y recuperar tareas.
+// storage.js - Gestor de localStorage
+// Guardar y recuperar tareas.
 // ==========================================================
 
 const STORAGE_KEY = "taskmanager_tasks";
@@ -13,7 +14,16 @@ export function hasStoredTasks() {
 export function getTasks() {
     try {
         const data = localStorage.getItem(STORAGE_KEY);
-        return data ? JSON.parse(data) : [];
+
+        if (!data) {
+            return [];
+        }
+
+        const tasks = JSON.parse(data);
+
+        // Comprueba que los datos recuperados sean un arreglo.
+        return Array.isArray(tasks) ? tasks : [];
+
     } catch (error) {
         console.error("Error al leer localStorage:", error);
         return [];
@@ -23,8 +33,14 @@ export function getTasks() {
 /** Guarda el arreglo completo de tareas. Devuelve true si tuvo éxito. */
 export function saveTasks(tasks) {
     try {
+        // Evita guardar datos que no sean un arreglo.
+        if (!Array.isArray(tasks)) {
+            throw new Error("Los datos de tareas deben ser un arreglo.");
+        }
+
         localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
         return true;
+
     } catch (error) {
         console.error("Error al guardar en localStorage:", error);
         return false;

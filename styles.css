@@ -1,4 +1,3 @@
-
 /* ===== 1. VARIABLES GLOBALES ==== */
 :root {
     --color-fondo: #f1f5fc;
@@ -17,8 +16,12 @@
     --color-peligro: #dc4545;
     --color-peligro-fondo: #fee9e9;
 
-    --color-prioridad-media: #2864e8;
+    --color-prioridad-alta: #b42318;
+    --color-prioridad-alta-fondo: #fee9e7;
+    --color-prioridad-media: #2457bd;
+    --color-prioridad-media-fondo: #e8efff;
     --color-prioridad-baja: #647084;
+    --color-prioridad-baja-fondo: #edf0f5;
 
     --sombra: 0 2px 8px rgba(15, 23, 42, 0.05);
     --radio: 14px;
@@ -39,7 +42,9 @@ body {
     line-height: 1.5;
 }
 
-button, input, textarea,
+button,
+input,
+textarea,
 select {
     font: inherit;
 }
@@ -182,7 +187,6 @@ button {
     display: none !important;
 }
 
-
 /* ==== 5. CONTROLES DE ADMINISTRACIÓN ==== */
 .controls {
     display: flex;
@@ -314,19 +318,27 @@ button {
     font-weight: 600;
 }
 
+/* [CAMBIO] Ahora usan las variables definidas en :root */
 .priority--high {
-    color: #b42318;
-    background-color: #fee9e7;
+    color: var(--color-prioridad-alta);
+    background-color: var(--color-prioridad-alta-fondo);
 }
 
 .priority--medium {
-    color: #2457bd;
-    background-color: #e8efff;
+    color: var(--color-prioridad-media);
+    background-color: var(--color-prioridad-media-fondo);
 }
 
 .priority--low {
-    color: #647084;
-    background-color: #edf0f5;
+    color: var(--color-prioridad-baja);
+    background-color: var(--color-prioridad-baja-fondo);
+}
+
+/* [CAMBIO] Fecha de creación, junto a la insignia de prioridad */
+.task-item__meta {
+    margin-left: 8px;
+    font-size: 12px;
+    color: var(--color-texto-secundario);
 }
 
 /* Tarea completada */
@@ -365,6 +377,11 @@ button {
     background-color: #c9f1da;
 }
 
+/* En tareas completadas, el botón se ve sobre fondo blanco para distinguirse */
+.task-item--completed .btn-complete {
+    background-color: #ffffff;
+}
+
 .btn-edit {
     background-color: #e8efff;
     color: var(--color-principal);
@@ -390,7 +407,6 @@ button {
     color: var(--color-texto-secundario);
     font-size: 14px;
 }
-
 
 /* ==== 7. NOTIFICACIONES ==== */
 .notification {
@@ -418,4 +434,14 @@ button {
     color: #2457bd;
     background-color: #e8efff;
     border-color: #c5d5ff;
+}
+
+/* ==== 8. RESPONSIVE ==== */
+/* [CAMBIO] En pantallas pequeñas las cajas y las tarjetas se apilan */
+@media (max-width: 600px) {
+    .dashboard,
+    .task-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
