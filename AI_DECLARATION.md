@@ -1,28 +1,50 @@
 # Declaración de uso de IA
 
-## 1. Herramientas de IA utilizadas y momentos
-- ChatGpt: Elección de la técnica (módulos ES6), Arquitectura del proyecto
-- Chatgpt: Genero libreria para Storage.
-- UXMagic.ai: Diseño para la Interfaz UI 
-- Chatgpt: api fue generado por chatgpt
-- Chatgpt: task fue generado por chatgpt
-- Chatgpt: ui fue generado por chatgpt
+## 1. Herramientas de IA utilizadas y etapas en las que se utilizo
 
-## 2. Prompts clave
-1. "Me puedes explicar a profundidad la diferencia entre opción A y Opción B"
-	"Opción A: Módulos ES6      ||     Opción B: Custom Events"
-2. "Qué estructura sería la mejor a utilizar para mantener este proyecto lo más ordenado
-    posible en base a la opción A: Módulos ES6"
+Durante el desarrollo del proyecto Task-Manager se utilizó ChatGPT como herramienta de apoyo para resolver 
+dudas, revisar fragmentos de código, comprender conceptos de JavaScript y mejorar la organización de la aplicación.
+ 
+- **Planificación:** orientación de la técnica (módulos ES6) 
+- **Elección de la técnica de investigación:** recomendación de (módulos ES6) y diseño de la arquitectura (`main.js`, `api.js`, `storage.js`, `tasks.js`, `ui.js`).
+- **Base visual:** propuesta inicial de `index.html` y `styles.css`, que luego modifiqué y rediseñé.
+- **Desarrollo:** resolución de dudas sobre JavaScript.
+- **Lógica de programación:** revisión de las operaciones CRUD, filtros, búsqueda y ordenamiento.
+- **Almacenamiento:** comprensión e implementación de LocalStorage.
+- **Consumo de API:** orientación para utilizar Fetch API, async/await y manejo de errores.
+- **Diseño Visual:** UXMagic.ai para el diseño de la Interfaz UI
+- **Pruebas:** apoyo para identificar posibles errores y verificar el funcionamiento de las funcionalidades.
+
+
+## 2. Prompts importantes utilizados
+
+**Prompt 1:**
+
+"Explícame cómo organizar mi proyecto utilizando módulos ES6, separando la lógica de las tareas, la manipulación del DOM, el consumo de una API REST y el almacenamiento mediante LocalStorage."
+
+**Prompt 2:**
+
+"Revisa el funcionamiento de mi aplicación Task-Manager y ayúdame a comprobar que las tareas se guarden correctamente, que se recuperen al recargar la página y que se manejen los errores de conexión con la API."
 
 ## 3. Partes con errores o ajustes manuales
-1. " Agregué por mi cuenta los campos de descripción, las etiquetas y atributos de accesibilidad en el HTML.
-2. " Agruege por mi cuenta el contenido de Readme"
-3. " Agregué por mi cuenta un try/catch para manejar errores de escritura en localStorage.
-4. " La prueba del modo Offline no funcionó en Phoenix Code (afectaba también al editor); 
-	 Así que probe el manejo de errores con una URL incorrecta para provocar un 404. "
-5. " Durante la prueba en task se encontraron fallas al momento de generar las tareas, por lo que se asigno
-	 una función para que valide el ID antes de la creación y no se duplique. "
-6. " En task se agrego de forma manual validatePriority, la comprobación de existencia en updateTask, 
-	 toggleTask, y deleteTask para devolver { tasks, deleted }"	 
-7. " Se utiliza la base generada para ui y se adapta a las clases ya generadas, se modifica style.css
-	 y se cambia showNotification para el mejoramiento de avisos en el API.
+
+Las respuestas y sugerencias proporcionadas por la inteligencia artificial fueron revisadas durante el desarrollo. 
+No se aceptaron automáticamente todos los cambios propuestos.
+
+Se realizaron pruebas manuales para comprobar el funcionamiento de la aplicación, incluyendo:
+
+- Creación de descripción, etiquetas y atributos de accesibilidad en HTML.
+- Creación, edición y eliminación de tareas.
+- Cambio del estado entre pendiente y completado.
+- Validación de títulos vacíos o con espacios.
+- Funcionamiento de filtros, búsqueda y ordenamiento.
+- Actualización de las estadísticas.
+- Persistencia de datos mediante LocalStorage.
+- Importación de tareas desde JSONPlaceholder.
+- Manejo de errores al simular una dirección incorrecta de la API.
+
+## 4. Responsabilidad del desarrollo
+
+La inteligencia artificial fue utilizada como herramienta de apoyo y aprendizaje. 
+La revisión, adaptación, integración y comprobación del código se realizaron durante el desarrollo del proyecto, 
+con el objetivo de comprender el funcionamiento de cada módulo y verificar los resultados obtenidos.
